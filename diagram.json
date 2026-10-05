@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "author": "IoT AGU",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 83.4, "left": -64.4, "attrs": {} },
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -72.1, "left": -273.8, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -172.5, "left": 177, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "bb1:tp.1", "red", [] ],
+    [ "bb1:tp.10", "dht1:VCC", "red", [ "h11.2", "v57.9", "h115.2" ] ],
+    [ "esp:GND", "bb1:tn.1", "black", [] ],
+    [ "bb1:tn.10", "dht1:GND", "black", [ "v105.5", "h155.2" ] ],
+    [ "esp:D4", "bb1:15t.a", "green", [] ],
+    [ "bb1:15t.e", "dht1:SDA", "green", [] ]
+  ],
+  "dependencies": {}
+}
